@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+</body onload="onInit()">
+<header class="main-layout flex">
+    <h1 class="logo">Memes Generator</h1>
+    <div class="main-nav flex">
+        <h2>Gallery</h2>
+        <h2>Memes</h2>
+        <h2>About</h2>
+    </div>
+</header>
+
+<main>
+    <section class="gallery-container">
+        <div class="search-tool">
+        </div>
+        <div class="imgs-container">
+        </div>
+    </section>
+    <section class="memes-editor-container hide">
+        <div class="canvas-container">
+        </div>
+        <div class="edit-tools">
+        </div>
+    </section>
+</main>
+
+<footer>
+    <h4>© Yoav Natan</h4>
+</footer>
+
+<script src="js/services/storage.service.js"></script>
+<script src="js/services/util.service.js"></script>
+<script src="js/services/general.service.js"></script>
+<script src="js/services/meme.service.js"></script>
+<script src="js/gallery.controller.js"></script>
+<script src="js/meme.controller.js"></script>
+
+</html>

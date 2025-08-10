@@ -1,0 +1,11 @@
+/* Font Awesome */
+
+@font-face {
+    font-family: fa-regular;
+    src: url('/fonts/fa/fa-regular-400.woff2');
+}
+
+@font-face {
+    font-family: fa-solid;
+    src: url('/fonts/fa/fa-solid-900.woff2');
+}
