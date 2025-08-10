@@ -8,36 +8,41 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body>
+<body onload="onInit()" onresize="resizeCanvas()">
+    <header class="main-layout flex ">
+        <h1 class="logo">Memes Generator</h1>
+        <div class="main-nav flex space-between">
+            <a href="#">Gallery</a>
+            <a href="#">Memes</a>
+            <a href="#">About</a>
+        </div>
+    </header>
 
-</body onload="onInit()">
-<header class="main-layout flex">
-    <h1 class="logo">Memes Generator</h1>
-    <div class="main-nav flex">
-        <h2>Gallery</h2>
-        <h2>Memes</h2>
-        <h2>About</h2>
-    </div>
-</header>
+    <main>
+        <section class="gallery-container">
+            <div class="search-tool">
+            </div>
+            <div class="imgs-container">
+            </div>
+        </section>
+        <section class="memes-editor-container">
+            <div class="canvas-container">
+                <canvas width="400" height="400" onmousedown="onDown(event)" onmouseup="onUp()"
+                    onmousemove="onDraw(event)" ontouchstart="onDown(event)" ontouchend="onUp()"
+                    ontouchmove="onDraw(event)"></canvas>
+                </canvas>
+            </div>
+            <div class="edit-tools">
+                <h2>Edit Meme</h2>
+            </div>
+        </section>
+    </main>
 
-<main>
-    <section class="gallery-container">
-        <div class="search-tool">
-        </div>
-        <div class="imgs-container">
-        </div>
-    </section>
-    <section class="memes-editor-container hide">
-        <div class="canvas-container">
-        </div>
-        <div class="edit-tools">
-        </div>
-    </section>
-</main>
+    <footer>
+        <h4>© Yoav Natan</h4>
+    </footer>
 
-<footer>
-    <h4>© Yoav Natan</h4>
-</footer>
+</body>
 
 <script src="js/services/storage.service.js"></script>
 <script src="js/services/util.service.js"></script>

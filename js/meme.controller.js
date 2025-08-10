@@ -1,25 +1,48 @@
 'use strict'
 
-var gImgs = [
-    { id: 1, url: 'imgs/square/img1.jpg', keywords: ['angry', 'trump', 'politics'] },
-    { id: 2, url: 'imgs/square/img2.jpg', keywords: ['cute', 'dog'] },
-    { id: 3, url: 'imgs/square/img3.jpg', keywords: ['cute', 'dog', 'baby', 'sleep'] },
-    { id: 4, url: 'imgs/square/img4.jpg', keywords: ['cute', 'cat', 'sleep', 'boaring'] },
-    { id: 5, url: 'imgs/square/img5.jpg', keywords: ['funny', 'baby', 'win'] },
-    { id: 6, url: 'imgs/square/img6.jpg', keywords: ['funny', 'tired', 'clumsy', 'man'] },
-    { id: 7, url: 'imgs/square/img7.jpg', keywords: ['funny', 'baby'] },
-    { id: 8, url: 'imgs/square/img8.jpg', keywords: ['interesting', 'love', 'fantasy', 'movie'] },
-    { id: 9, url: 'imgs/square/img10.jpg', keywords: ['funny', 'kid', 'baby'] },]
-var gMeme = {
-    selectedImgId: 5,
-    selectedLineIdx: 0,
-    lines: [
-        {
-            txt: 'Write your text here'
-            ,
-            size: 20,
-            color: 'white'
-        }
-    ]
+var gElCanvas
+var gCtx
+
+function onInit() {
+    gElCanvas = document.querySelector('canvas')
+    gCtx = gElCanvas.getContext('2d')
+    resizeCanvas()
+    renderMeme()
 }
-var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
+
+function renderMeme() {
+    const { selectedImgId: imgId, selectedLineIdx: lineIdx, lines } = getMeme()
+    let img = new Image
+    img.src = gImgs[imgId].url
+    img.onload = () => {
+        renderImg(img)
+        renderTxt(lines)
+    }
+}
+
+function resizeCanvas() {
+    const elContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elContainer.clientWidth - 40
+}
+
+function onDraw() {
+
+}
+
+function renderImg(img) {
+    gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
+    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+}
+
+function renderTxt(lines, x = 80, y = 100) {
+    lines.forEach(line => {
+        gCtx.lineWidth = 2
+        gCtx.strokeStyle = 'black'
+        gCtx.fillStyle = `${line.color}`
+        gCtx.font = `${line.size}px Arial`
+        // gCtx.textAlign = 'center'
+        // gCtx.textBaseline = 'middle'
+        gCtx.fillText(line.txt, line.pos.x, line.pos.y)
+        gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
+    })
+}
