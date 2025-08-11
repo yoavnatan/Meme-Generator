@@ -44,3 +44,23 @@ function scaleTxt(diff) {
     gMeme.lines[gMeme.selectedLineIdx].size += diff
 }
 
+function addLine() {
+    const newLine = {
+        txt: `Add text here`,
+        size: 30,
+        color: 'white',
+        pos: { x: 30, y: 250 }
+    }
+    gMeme.lines.push(newLine)
+}
+
+function switchLine() {
+    if (gMeme.lines.length === 1) return
+    if (gMeme.lines[gMeme.selectedLineIdx + 1]) gMeme.selectedLineIdx++
+    else gMeme.selectedLineIdx--
+    console.log(gMeme.selectedLineIdx)
+}
+
+function setColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color
+}

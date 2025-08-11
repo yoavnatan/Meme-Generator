@@ -36,8 +36,11 @@
                 <h2>Edit Meme</h2>
                 <input type="text" id="text-editor" name="text-editor" placeholder="Add text"
                     oninput="onSetLineTxt(this.value)">
-                <button class="btn btn-increase" onclick="onScaleTxt(+5)">+</button>
-                <button class="btn btn-decrease" onclick="onScaleTxt(-5)">-</button>
+                <input type="color" id="color-picker" name="color-picker" oninput="onColorPick(this.value)">
+                <button class="btn btn-increase" onclick="onAddLine()">+Line</button>
+                <button class="btn btn-increase" onclick="onScaleTxt(+5)">A+</button>
+                <button class="btn btn-decrease" onclick="onScaleTxt(-5)">A-</button>
+                <button class="btn btn-decrease" onclick="onSwitchLine()">⇅</button>
                 <a href="#" download="Canvas" onclick="onDownloadCanvas(this)">Download</a>
             </div>
         </section>

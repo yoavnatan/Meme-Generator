@@ -63,3 +63,32 @@ function onScaleTxt(diff) {
     scaleTxt(diff)
     renderMeme()
 }
+
+function onAddLine() {
+    addLine()
+    renderMeme()
+}
+
+function onSwitchLine() {
+    switchLine()
+}
+
+function onColorPick(elColor) {
+    setColor(elColor)
+    renderMeme()
+    const { size, pos } = gMeme.lines[gMeme.selectedLineIdx]
+    console.log(size, pos)
+}
+
+function drawRect(x, y) {
+    const { size = size * 1.5, pos } = gMeme.lines[gMeme.selectedLineIdx]
+    pos.x = pos.x - 10
+    pos.y = pos.y - 10
+    gCtx.beginPath()
+    gCtx.strokeStyle = 'blue'
+    // gCtx.fillStyle = 'yellow'
+    gCtx.lineWidth = 3
+    // gCtx.fillRect(x, y, gBrush.size, gBrush.size)
+    gCtx.strokeRect(x, y, size, size)
+
+}
