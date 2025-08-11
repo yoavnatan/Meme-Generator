@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body onload="onInit()" onresize="resizeCanvas()">
+<body onload="onInit()">
     <header class="main-layout flex ">
         <h1 class="logo">Memes Generator</h1>
         <div class="main-nav flex space-between">
@@ -34,6 +34,8 @@
             </div>
             <div class="edit-tools">
                 <h2>Edit Meme</h2>
+                <input type="text" id="text-editor" name="text-editor" placeholder="Add text"
+                    oninput="onSetLineTxt(this.value)">
             </div>
         </section>
     </main>

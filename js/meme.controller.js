@@ -6,14 +6,15 @@ var gCtx
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-    resizeCanvas()
     renderMeme()
+    resizeCanvas()
 }
 
 function renderMeme() {
     const { selectedImgId: imgId, selectedLineIdx: lineIdx, lines } = getMeme()
     let img = new Image
     img.src = gImgs[imgId].url
+
     img.onload = () => {
         renderImg(img)
         renderTxt(lines)
@@ -45,4 +46,9 @@ function renderTxt(lines, x = 80, y = 100) {
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
     })
+}
+
+function onSetLineTxt(elTxt) {
+    setLineTxt(elTxt)
+    renderMeme()
 }

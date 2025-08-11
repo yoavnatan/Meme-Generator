@@ -16,21 +16,20 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: `I don't know how`,
+            txt: `Add text here`,
             size: 60,
             color: 'white',
             pos: { x: 80, y: 100 }
         },
-        {
-            txt: `But I'm gonna do this`,
-            size: 50,
-            color: 'white',
-            pos: { x: 70, y: 500 }
-        }
+
     ]
 }
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 function getMeme() {
     return gMeme
+}
+
+function setLineTxt(txt) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
