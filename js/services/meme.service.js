@@ -17,9 +17,9 @@ var gMeme = {
     lines: [
         {
             txt: `Add text here`,
-            size: 60,
+            size: 40,
             color: 'white',
-            pos: { x: 80, y: 100 }
+            pos: { x: 30, y: 80 }
         },
 
     ]
@@ -30,6 +30,14 @@ function getMeme() {
     return gMeme
 }
 
+function getImgs() {
+    return gImgs
+}
 function setLineTxt(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
+
+function setImg(imgIdx) {
+    gMeme.selectedImgId = imgIdx
+}
+

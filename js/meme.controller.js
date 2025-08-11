@@ -6,8 +6,8 @@ var gCtx
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-    renderMeme()
     resizeCanvas()
+    onShowGallery()
 }
 
 function renderMeme() {
@@ -35,7 +35,7 @@ function renderImg(img) {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function renderTxt(lines, x = 80, y = 100) {
+function renderTxt(lines, x = 10, y = 100) {
     lines.forEach(line => {
         gCtx.lineWidth = 2
         gCtx.strokeStyle = 'black'

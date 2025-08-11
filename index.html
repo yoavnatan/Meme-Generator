@@ -12,8 +12,8 @@
     <header class="main-layout flex ">
         <h1 class="logo">Memes Generator</h1>
         <div class="main-nav flex space-between">
-            <a href="#">Gallery</a>
-            <a href="#">Memes</a>
+            <h2 onclick="onShowGallery()">Gallery</h2>
+            <a href=" #">Memes</a>
             <a href="#">About</a>
         </div>
     </header>
@@ -25,7 +25,7 @@
             <div class="imgs-container">
             </div>
         </section>
-        <section class="memes-editor-container">
+        <section class="memes-editor-container hide">
             <div class="canvas-container">
                 <canvas width="400" height="400" onmousedown="onDown(event)" onmouseup="onUp()"
                     onmousemove="onDraw(event)" ontouchstart="onDown(event)" ontouchend="onUp()"
