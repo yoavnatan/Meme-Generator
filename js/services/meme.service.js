@@ -21,7 +21,6 @@ var gMeme = {
             color: 'white',
             pos: { x: 30, y: 80 }
         },
-
     ]
 }
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
@@ -39,5 +38,9 @@ function setLineTxt(txt) {
 
 function setImg(imgIdx) {
     gMeme.selectedImgId = imgIdx
+}
+
+function scaleTxt(diff) {
+    gMeme.lines[gMeme.selectedLineIdx].size += diff
 }
 

@@ -37,7 +37,7 @@ function renderImg(img) {
 
 function renderTxt(lines, x = 10, y = 100) {
     lines.forEach(line => {
-        gCtx.lineWidth = 2
+        gCtx.lineWidth = 1.5
         gCtx.strokeStyle = 'black'
         gCtx.fillStyle = `${line.color}`
         gCtx.font = `${line.size}px Arial`
@@ -50,5 +50,16 @@ function renderTxt(lines, x = 10, y = 100) {
 
 function onSetLineTxt(elTxt) {
     setLineTxt(elTxt)
+    renderMeme()
+}
+
+function onDownloadCanvas(elLink) {
+    const dataUrl = gElCanvas.toDataURL()
+    elLink.href = dataUrl
+    elLink.download = 'My-Meme'
+}
+
+function onScaleTxt(diff) {
+    scaleTxt(diff)
     renderMeme()
 }
