@@ -25,7 +25,7 @@ function renderGallery() {
 function onShowGallery() {
     hideElement('.memes-editor-container')
     showElement('.gallery-container')
-        ('.gallery-container')
+
     renderGallery()
 }
 
