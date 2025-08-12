@@ -10,6 +10,7 @@ body {
     overflow: hidden;
     background-color: rgb(237 242 250);
     font-family: lato-regular;
+    max-height: 100dvh;
 }
 
 

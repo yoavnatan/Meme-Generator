@@ -14,6 +14,7 @@
 @import url('./components/logo.css');
 @import url('./components/canvas.css');
 @import url('./components/gallery.css');
+@import url('./components/memes-editor.css');
 
 
 @import url('./setup/mq.css');

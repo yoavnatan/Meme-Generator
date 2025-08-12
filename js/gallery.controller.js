@@ -4,7 +4,7 @@ function renderGallery() {
     const imgs = getImgs()
     let strHTML = ''
 
-    for (var i = 0; i < 2; i++) {
+    for (var i = 0; i < imgs.length; i++) {
         strHTML +=
             `<section class="gallery-item" onclick="onImageSelect(${i})">
     <img src="${imgs[i].url}">
@@ -25,10 +25,12 @@ function renderGallery() {
 function onShowGallery() {
     hideElement('.memes-editor-container')
     showElement('.gallery-container')
+        ('.gallery-container')
     renderGallery()
 }
 
 function onImageSelect(imgIdx) {
+    console.log('hi')
     hideElement('.gallery-container')
     showElement('.memes-editor-container')
     setImg(imgIdx)

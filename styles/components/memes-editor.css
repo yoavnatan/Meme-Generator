@@ -1,0 +1,4 @@
+.memes-editor-container {
+    max-height: 80dvh;
+    overflow-y: auto;
+}
