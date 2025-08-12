@@ -18,6 +18,7 @@ function renderMeme() {
     img.onload = () => {
         renderImg(img)
         renderTxt(lines)
+        drawFrame(lineIdx)
     }
 }
 
@@ -35,7 +36,7 @@ function renderImg(img) {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function renderTxt(lines, x = 10, y = 100) {
+function renderTxt(lines) {
     lines.forEach(line => {
         gCtx.lineWidth = 1.5
         gCtx.strokeStyle = 'black'
@@ -45,7 +46,10 @@ function renderTxt(lines, x = 10, y = 100) {
         // gCtx.textBaseline = 'middle'
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
+        line.width = gCtx.measureText(line.txt).width
+        line.height = gCtx.measureText(line.txt).hangingBaseline * -1
     })
+
 }
 
 function onSetLineTxt(elTxt) {
@@ -71,24 +75,29 @@ function onAddLine() {
 
 function onSwitchLine() {
     switchLine()
+    renderMeme()
 }
 
 function onColorPick(elColor) {
     setColor(elColor)
     renderMeme()
-    const { size, pos } = gMeme.lines[gMeme.selectedLineIdx]
-    console.log(size, pos)
+
 }
 
-function drawRect(x, y) {
-    const { size = size * 1.5, pos } = gMeme.lines[gMeme.selectedLineIdx]
-    pos.x = pos.x - 10
-    pos.y = pos.y - 10
+function drawRect(x, y, width, height) {
+
     gCtx.beginPath()
     gCtx.strokeStyle = 'blue'
     // gCtx.fillStyle = 'yellow'
     gCtx.lineWidth = 3
     // gCtx.fillRect(x, y, gBrush.size, gBrush.size)
-    gCtx.strokeRect(x, y, size, size)
+    gCtx.strokeRect(x - 5, y + 5, width + 10, height - 10)
+
+}
+
+function drawFrame(lineIdx) {
+    let selectedLine = gMeme.lines[lineIdx]
+
+    drawRect(selectedLine.pos.x, selectedLine.pos.y + 4, selectedLine.width, selectedLine.height - 4)
 
 }

@@ -52,12 +52,13 @@ function addLine() {
         pos: { x: 30, y: 250 }
     }
     gMeme.lines.push(newLine)
+    gMeme.selectedLineIdx++
 }
 
 function switchLine() {
     if (gMeme.lines.length === 1) return
-    if (gMeme.lines[gMeme.selectedLineIdx + 1]) gMeme.selectedLineIdx++
-    else gMeme.selectedLineIdx--
+    if (!gMeme.lines[gMeme.selectedLineIdx + 1]) gMeme.selectedLineIdx = 0
+    else gMeme.selectedLineIdx++
     console.log(gMeme.selectedLineIdx)
 }
 
