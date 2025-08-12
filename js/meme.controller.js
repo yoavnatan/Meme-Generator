@@ -11,6 +11,7 @@ function onInit() {
 }
 
 function renderMeme() {
+    resizeCanvas()
     const { selectedImgId: imgId, selectedLineIdx: lineIdx, lines } = getMeme()
     let img = new Image
     img.src = gImgs[imgId].url
@@ -24,7 +25,7 @@ function renderMeme() {
 
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.clientWidth - 40
+    gElCanvas.width = elContainer.clientWidth - 20
 }
 
 function onDraw() {
@@ -97,7 +98,21 @@ function drawRect(x, y, width, height) {
 
 function drawFrame(lineIdx) {
     let selectedLine = gMeme.lines[lineIdx]
-
     drawRect(selectedLine.pos.x, selectedLine.pos.y + 4, selectedLine.width, selectedLine.height - 4)
 
 }
+
+function onLineClicked(ev) {
+    const { offsetX, offsetY, clientX, clientY } = ev
+    console.log(offsetY)
+    const clickedLine = gMeme.lines.forEach(line => {
+        // Todo: Find the only clicked line
+
+        console.log(line.pos.y)
+        if (offsetX >= line.pos.x && offsetX <= line.pos.x + line.width + 5 &&
+            offsetY <= line.pos.y && offsetY >= line.pos.y + line.height) console.log('clicked')
+        // && offsetY >= line.pos.y
+    })
+}
+
+

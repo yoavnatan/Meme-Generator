@@ -65,3 +65,4 @@ function switchLine() {
 function setColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
+

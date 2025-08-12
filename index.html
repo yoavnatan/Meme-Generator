@@ -9,8 +9,8 @@
 </head>
 
 <body onload="onInit()">
-    <header class="main-layout flex ">
-        <h1 class="logo">Memes Generator</h1>
+    <header class=" main-layout flex ">
+        <h1 class=" logo">Memes Generator</h1>
         <div class="main-nav flex space-between">
             <h2 onclick="onShowGallery()">Gallery</h2>
             <h2>Memes</h2>
@@ -27,8 +27,8 @@
         </section>
         <section class="memes-editor-container hide">
             <div class="canvas-container">
-                <canvas width="400" height="400" onmousedown="onDown(event)" onmouseup="onUp()"
-                    onmousemove="onDraw(event)" ontouchstart="onDown(event)" ontouchend="onUp()"
+                <canvas width="400" height="400" onclick="onLineClicked(event)" onmousedown="onDown(event)"
+                    onmouseup="onUp()" onmousemove="onDraw(event)" ontouchstart="onDown(event)" ontouchend="onUp()"
                     ontouchmove="onDraw(event)"></canvas>
                 </canvas>
             </div>
