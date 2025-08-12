@@ -19,7 +19,7 @@ function renderMeme() {
     img.onload = () => {
         renderImg(img)
         renderTxt(lines)
-        drawFrame(lineIdx)
+        if (gMeme.selectedLineIdx !== null) drawFrame(lineIdx)
     }
 }
 
@@ -86,7 +86,6 @@ function onColorPick(elColor) {
 }
 
 function drawRect(x, y, width, height) {
-
     gCtx.beginPath()
     gCtx.strokeStyle = 'blue'
     // gCtx.fillStyle = 'yellow'
@@ -104,15 +103,19 @@ function drawFrame(lineIdx) {
 
 function onLineClicked(ev) {
     const { offsetX, offsetY, clientX, clientY } = ev
-    console.log(offsetY)
-    const clickedLine = gMeme.lines.forEach(line => {
-        // Todo: Find the only clicked line
+    const clickedLine = gMeme.lines.findIndex(line => {
 
-        console.log(line.pos.y)
-        if (offsetX >= line.pos.x && offsetX <= line.pos.x + line.width + 5 &&
-            offsetY <= line.pos.y && offsetY >= line.pos.y + line.height) console.log('clicked')
-        // && offsetY >= line.pos.y
+        return (offsetX >= line.pos.x && offsetX <= line.pos.x + line.width + 5 &&
+            offsetY <= line.pos.y && offsetY >= line.pos.y + line.height)
     })
+    if (clickedLine >= 0) {
+        gMeme.selectedLineIdx = clickedLine
+        renderMeme()
+    }
+    else {
+        gMeme.selectedLineIdx = null
+        renderMeme()
+    }
 }
 
 

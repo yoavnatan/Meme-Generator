@@ -1,0 +1,17 @@
+.main-nav li {
+    cursor: pointer;
+}
+
+.main-nav {
+    flex: 1;
+    justify-content: space-between;
+}
+
+.main-nav-list {
+    display: flex;
+    justify-content: end;
+}
+
+.main-nav-list li {
+    padding-inline-start: 2em;
+}

@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body onload="onInit()">
-    <header class=" main-layout flex ">
-        <h1 class=" logo">Memes Generator</h1>
-        <div class="main-nav flex space-between">
-            <h2 onclick="onShowGallery()">Gallery</h2>
-            <h2>Memes</h2>
-            <h2>About</h2>
+<body class="main-layout" onload="onInit()">
+
+    <header class="main-header full">
+        <div class="inner-container">
+            <h1 class="logo">Memes Generator</h1>
+            <nav class="main-nav">
+                <ul class="main-nav-list clean-list">
+                    <li onclick="onShowGallery()">Gallery</li>
+                    <li>Memes</li>
+                    <li>About</li>
+                </ul>
+            </nav>
+            <button class="btn-toggle-menu" type="button" onclick="toggleMenu()">☰</button>
         </div>
     </header>
 
@@ -46,9 +52,6 @@
         </section>
     </main>
 
-    <footer>
-        <h4>© Yoav Natan</h4>
-    </footer>
 
 </body>
 

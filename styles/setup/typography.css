@@ -9,3 +9,42 @@
     font-family: fa-solid;
     src: url('/fonts/fa/fa-solid-900.woff2');
 }
+
+/* Neucha */
+
+@font-face {
+    font-family: neucha;
+    src: url('/fonts/neucha/Neucha-Regular.ttf')
+}
+
+/* Major Mono Display */
+
+@font-face {
+    font-family: major_mono_display;
+    src: url('/fonts/Major_mono_display/MajorMonoDisplay-Regular.ttf')
+}
+
+/* Lato-bold */
+@font-face {
+    font-family: lato-bold;
+    src: url('/fonts/lato/Lato-Bold.ttf');
+}
+
+@font-face {
+    font-family: lato-regular;
+    src: url('/fonts/lato/Lato-Regular.ttf');
+}
+
+/* Rock */
+
+@font-face {
+    font-family: rock;
+    src: url('/fonts/rock/Rock3D-Regular.ttf');
+}
+
+/* Pacificio */
+
+@font-face {
+    font-family: pacificio;
+    src: url('/fonts/pacificio/Pacifico-Regular.ttf');
+}

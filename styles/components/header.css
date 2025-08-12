@@ -1,3 +1,14 @@
-.main-nav h2 {
-    cursor: pointer;
+.main-header {
+    background: #020024;
+    background: linear-gradient(297deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    display: grid;
+    grid-template-columns: inherit;
+    color: whitesmoke;
+}
+
+.main-header .inner-container {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

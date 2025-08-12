@@ -1,8 +1,26 @@
-.gallery-item {
+.gallery-container {
+    padding-top: 25px;
+}
+
+.gallery-container .gallery-item {
     cursor: pointer;
 }
 
-.gallery-item img {
-    width: 80vw;
+.gallery-container .gallery-item img {
+    width: 100%;
+    border-radius: 15px;
+}
 
+.imgs-container {
+    display: grid;
+    gap: 10px;
+    overflow: auto;
+
+}
+
+@media (min-width:635px) {
+
+    .imgs-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
