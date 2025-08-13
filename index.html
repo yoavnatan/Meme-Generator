@@ -40,15 +40,29 @@
                     ontouchmove="onDraw(event)"></canvas>
                 </canvas>
             </div>
-            <div class="edit-tools">
+            <div class="edit-tools-container">
                 <h2>Edit Meme</h2>
                 <input type="text" id="text-editor" name="text-editor" placeholder="Add text"
                     oninput="onSetLineTxt(this.value)">
-                <input type="color" id="color-picker" name="color-picker" oninput="onColorPick(this.value)">
-                <button class="btn btn-increase" onclick="onAddLine()">+Line</button>
-                <button class="btn btn-increase" onclick="onScaleTxt(+5)">A+</button>
-                <button class="btn btn-decrease" onclick="onScaleTxt(-5)">A-</button>
-                <button class="btn btn-decrease" onclick="onSwitchLine()">⇅</button>
+                <section class="btn-font-container">
+                    <div class="btn-font-control fa-solid fa-color">
+                        <input class="color-picker" type="color" id="color-picker" name="color-picker"
+                            oninput="onColorPick(this.value)">
+                    </div>
+                    <div class="btn-font-control fa-solid fa-plus" onclick="onAddLine()"></div>
+                    <div class="btn-font-control fa-solid fa-align-left" onclick="onAlignLeft()"></div>
+                    <div class="btn-font-control fa-solid fa-align-center" onclick="onAlignCenter()"></div>
+                    <div class="btn-font-control fa-solid fa-align-right" onclick="onAlignRight()"></div>
+                </section>
+                <section class="btn-font-container-second flex">
+                    <div class="btn-font-control fa-solid fa-scale-up" onclick="onScaleTxt(+5)"></div>
+                    <div class="btn-font-control fa-solid fa-scale-down" onclick="onScaleTxt(-5)"></div>
+                    <div class="btn-font-control fa-solid fa-arrow-up" onclick="onMoveLine(+1)"></div>
+                    <div class="btn-font-control fa-solid fa-arrow-down" onclick="onMoveLine(-1)"></div>
+                    <div class="btn-font-control fa-solid fa-arrows-switch" onclick="onSwitchLine()"></div>
+                    <div class="btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
+                </section>
+
                 <select class="font-picker" onchange="onSetFontFamily(this.value)">
                     <option value="impact">Impact</option>
                     <option value="arial">Arial</option>
@@ -65,12 +79,7 @@
                 <label for="font-size">Size:</label>
                 <input type="range" id="font-size" name="font-size" min="20" max="100" value=""
                     oninput="onSetFontSize(this.value)">
-                <div class="fa-solid fa-align-left" onclick="onAlignLeft()"></div>
-                <div class="fa-solid fa-align-center" onclick="onAlignCenter()"></div>
-                <div class="fa-solid fa-align-right" onclick="onAlignRight()"></div>
-                <div class="fa-solid fa-arrow-up" onclick="onMoveLine(+1)"></div>
-                <div class="fa-solid fa-arrow-down" onclick="onMoveLine(-1)"></div>
-                <div class="fa-solid fa-trash" onclick="onRemoveLine()"></div>
+
 
                 <a href="#" download="Canvas" onclick="onDownloadCanvas(this)">Download</a>
             </div>

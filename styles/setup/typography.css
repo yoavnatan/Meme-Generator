@@ -40,6 +40,26 @@
     content: "\f2ed"
 }
 
+.fa-solid.fa-plus::before {
+    content: "\f0fe"
+}
+
+.fa-solid.fa-color::before {
+    content: "\f53f"
+}
+
+.fa-solid.fa-scale-up::before {
+    content: "\f424"
+}
+
+.fa-solid.fa-scale-down::before {
+    content: "\f422"
+}
+
+.fa-solid.fa-arrows-swtich::before {
+    content: "\f0ec"
+}
+
 /* Neucha */
 
 @font-face {

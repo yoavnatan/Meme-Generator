@@ -3,6 +3,43 @@
     overflow-y: auto;
 }
 
-.edit-tools {
+.edit-tools-container {
     padding: 1em;
+    display: grid;
+    gap: 10px;
+    background-color: rgb(246, 254, 255);
+    border-radius: 25px;
+}
+
+.btn-font-control,
+.color-picker {
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.btn-font-control.fa-color {
+    position: relative;
+}
+
+.edit-tools-container .color-picker {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.btn-font-container {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #c9e3f5;
+}
+
+.btn-font-container-second {
+    justify-content: space-evenly;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
 }
