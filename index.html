@@ -36,7 +36,7 @@
         <section class="memes-editor-container hide">
             <div class="canvas-container">
                 <canvas width="400" height="400" onclick="onLineClicked(event)" onmousedown="onDown(event)"
-                    onmouseup="onUp()" onmousemove="onDraw(event)" ontouchstart="onDown(event)" ontouchend="onUp()"
+                    onmouseup="onUp()" onmousemove="onMove(event)" ontouchstart="onDown(event)" ontouchend="onUp()"
                     ontouchmove="onDraw(event)"></canvas>
                 </canvas>
             </div>
@@ -63,7 +63,7 @@
                     <div class="btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
                 </section>
 
-                <select class="font-picker" onchange="onSetFontFamily(this.value)">
+                <select id="font-picker" class="font-picker" onchange="onSetFontFamily(this.value)">
                     <option value="impact">Impact</option>
                     <option value="arial">Arial</option>
                     <option value="verdana">Verdana</option>

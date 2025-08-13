@@ -57,6 +57,22 @@
 
 /* Medium */
 
-@media (min-width: 900px) {}
+@media (min-width: 770px) {
+
+    .memes-editor-container:not(.hide) {
+        display: flex;
+    }
+
+    .main-layout {
+        grid-template-columns: minmax(16px, 1fr) minmax(auto, 1100px) minmax(16px, 1fr);
+    }
+
+    .edit-tools-container {
+        width: 60%;
+    }
+
+
+}
+
 
 /* Large */

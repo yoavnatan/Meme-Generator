@@ -1,14 +1,16 @@
 .memes-editor-container {
-    max-height: 80dvh;
+    max-height: 90dvh;
     overflow-y: auto;
 }
 
 .edit-tools-container {
     padding: 1em;
     display: grid;
+    align-items: center;
     gap: 10px;
     background-color: rgb(246, 254, 255);
     border-radius: 25px;
+    margin: 10px;
 }
 
 .btn-font-control,
@@ -32,6 +34,7 @@
 .btn-font-container {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     border-radius: 20px;
     padding: 10px;
     background-color: #c9e3f5;
@@ -39,6 +42,7 @@
 
 .btn-font-container-second {
     justify-content: space-evenly;
+    align-items: center;
     background-color: #ffffff;
     border-radius: 20px;
     padding: 10px;

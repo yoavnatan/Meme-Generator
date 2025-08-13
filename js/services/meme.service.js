@@ -49,8 +49,8 @@ function addLine() {
     const newLine = {
         txt: `Add text here`,
         size: 30,
-        color: 'Impact',
-        fontFamily: 'Arial',
+        color: 'white',
+        fontFamily: 'Impact',
         pos: { x: 30, y: 250 }
     }
     gMeme.lines.push(newLine)
@@ -102,4 +102,10 @@ function moveLine(diff) {
 
 function removeLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+}
+
+function dragLine(dx, dy) {
+    const line = getSelectedLine()
+    line.pos.x += dx
+    line.pos.y += dy
 }
