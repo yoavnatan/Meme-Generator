@@ -49,11 +49,33 @@
                 <button class="btn btn-increase" onclick="onScaleTxt(+5)">A+</button>
                 <button class="btn btn-decrease" onclick="onScaleTxt(-5)">A-</button>
                 <button class="btn btn-decrease" onclick="onSwitchLine()">⇅</button>
+                <select class="font-picker" onchange="onSetFontFamily(this.value)">
+                    <option value="impact">Impact</option>
+                    <option value="arial">Arial</option>
+                    <option value="verdana">Verdana</option>
+                    <option value="tahoma">Tahoma</option>
+                    <option value="trebuchet ms">Trebuchet MS</option>
+                    <option value="times new  roman">Times New Roman</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="garamond">Garamond</option>
+                    <option value="courier new">Courier New</option>
+                    <option value="brush script mt">Brush Script Mt</option>
+                    <option value="poppins">Poppins</option>
+                </select>
+                <label for="font-size">Size:</label>
+                <input type="range" id="font-size" name="font-size" min="20" max="100" value=""
+                    oninput="onSetFontSize(this.value)">
+                <div class="fa-solid fa-align-left" onclick="onAlignLeft()"></div>
+                <div class="fa-solid fa-align-center" onclick="onAlignCenter()"></div>
+                <div class="fa-solid fa-align-right" onclick="onAlignRight()"></div>
+                <div class="fa-solid fa-arrow-up" onclick="onMoveLine(+1)"></div>
+                <div class="fa-solid fa-arrow-down" onclick="onMoveLine(-1)"></div>
+                <div class="fa-solid fa-trash" onclick="onRemoveLine()"></div>
+
                 <a href="#" download="Canvas" onclick="onDownloadCanvas(this)">Download</a>
             </div>
         </section>
     </main>
-
 
 </body>
 

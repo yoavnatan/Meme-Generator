@@ -18,7 +18,7 @@ function renderMeme() {
 
     img.onload = () => {
         renderImg(img)
-        renderTxt(lines)
+        if (gMeme.lines.length > 0) renderTxt(lines)
         if (gMeme.selectedLineIdx !== null) drawFrame(lineIdx)
     }
 }
@@ -42,8 +42,8 @@ function renderTxt(lines) {
         gCtx.lineWidth = 1.5
         gCtx.strokeStyle = 'black'
         gCtx.fillStyle = `${line.color}`
-        gCtx.font = `${line.size}px Arial`
-        // gCtx.textAlign = 'center'
+        gCtx.font = `${line.size}px ${line.fontFamily}`
+        // gCtx.textAlign = 'left'
         // gCtx.textBaseline = 'middle'
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
@@ -118,4 +118,39 @@ function onLineClicked(ev) {
     }
 }
 
+function onSetFontSize(inputSize) {
+    setFontSize(inputSize)
+    renderMeme()
+}
 
+function onSetFontFamily(inputFont) {
+    setFontFamily(inputFont)
+    renderMeme()
+}
+
+function onAlignLeft() {
+    alignLeft()
+    renderMeme()
+}
+
+function onAlignCenter() {
+    const canvasCenter = gElCanvas.clientWidth / 2
+    alignCenter(canvasCenter)
+    renderMeme()
+}
+
+function onAlignRight() {
+    const canvasRihgt = gElCanvas.clientWidth
+    alignRight(canvasRihgt)
+    renderMeme()
+}
+
+function onMoveLine(diff) {
+    moveLine(diff)
+    renderMeme()
+}
+
+function onRemoveLine() {
+    removeLine()
+    renderMeme()
+}

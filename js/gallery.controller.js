@@ -30,7 +30,6 @@ function onShowGallery() {
 }
 
 function onImageSelect(imgIdx) {
-    console.log('hi')
     hideElement('.gallery-container')
     showElement('.memes-editor-container')
     setImg(imgIdx)

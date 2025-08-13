@@ -5,9 +5,39 @@
     src: url('./fonts/fa/fa-regular-400.woff2');
 }
 
+
 @font-face {
     font-family: fa-solid;
     src: url('./fonts/fa/fa-solid-900.woff2');
+}
+
+.fa-solid::before {
+    font-family: fa-solid;
+    font-style: normal;
+}
+
+.fa-solid.fa-align-center::before {
+    content: "\f037";
+}
+
+.fa-solid.fa-align-left::before {
+    content: "\f036";
+}
+
+.fa-solid.fa-align-right::before {
+    content: "\f038";
+}
+
+.fa-solid.fa-arrow-up::before {
+    content: "\f0aa";
+}
+
+.fa-solid.fa-arrow-down::before {
+    content: "\f0ab";
+}
+
+.fa-solid.fa-trash::before {
+    content: "\f2ed"
 }
 
 /* Neucha */

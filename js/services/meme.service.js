@@ -19,6 +19,7 @@ var gMeme = {
             txt: `Add text here`,
             size: 40,
             color: 'white',
+            fontFamily: 'Impact',
             pos: { x: 30, y: 80 }
         },
     ]
@@ -48,7 +49,8 @@ function addLine() {
     const newLine = {
         txt: `Add text here`,
         size: 30,
-        color: 'white',
+        color: 'Impact',
+        fontFamily: 'Arial',
         pos: { x: 30, y: 250 }
     }
     gMeme.lines.push(newLine)
@@ -66,3 +68,38 @@ function setColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 
+function setFontSize(fontSize) {
+    gMeme.lines[gMeme.selectedLineIdx].size = +fontSize
+}
+
+function setFontFamily(fontFamily) {
+    gMeme.lines[gMeme.selectedLineIdx].fontFamily = fontFamily
+}
+
+function alignLeft() {
+    const line = getSelectedLine()
+    line.pos.x = 30
+}
+
+function alignCenter(center) {
+    const line = getSelectedLine()
+    line.pos.x = center - line.width / 2
+}
+
+function alignRight(right) {
+    const line = getSelectedLine()
+    line.pos.x = right - line.width - 30
+}
+
+function getSelectedLine() {
+    return gMeme.lines[gMeme.selectedLineIdx]
+}
+
+function moveLine(diff) {
+    const line = getSelectedLine()
+    line.pos.y -= 5 * diff
+}
+
+function removeLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+}

@@ -2,3 +2,7 @@
     max-height: 80dvh;
     overflow-y: auto;
 }
+
+.edit-tools {
+    padding: 1em;
+}
