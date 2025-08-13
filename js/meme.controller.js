@@ -32,7 +32,8 @@ function resizeCanvas() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    onLineClicked(ev)
+    console.log(pos)
+    onLineClicked(pos)
     const line = getSelectedLine()
     if (!line) return
     gIsMouseDown = true
@@ -42,6 +43,7 @@ function onDown(ev) {
 
 function onUp() {
     gIsMouseDown = false
+    gLastPos = null
     document.body.style.cursor = 'default'
 
 }
@@ -126,8 +128,8 @@ function drawFrame(lineIdx) {
 
 }
 
-function onLineClicked(ev) {
-    const { offsetX, offsetY, clientX, clientY } = ev
+function onLineClicked(position) {
+    const { x: offsetX, y: offsetY } = position
     const clickedLine = gMeme.lines.findIndex(line => {
 
         return (offsetX >= line.pos.x && offsetX <= line.pos.x + line.width + 5 &&
@@ -203,6 +205,7 @@ function getEvPos(ev) {
         pos = {
             x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
             y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
+
         }
     }
     return pos
