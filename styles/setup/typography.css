@@ -60,6 +60,10 @@
     content: "\f0ec"
 }
 
+.fa-solid.fa-save::before {
+    content: "\f0c7"
+}
+
 /* Neucha */
 
 @font-face {

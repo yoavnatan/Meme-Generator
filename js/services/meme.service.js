@@ -1,5 +1,8 @@
 'use strict'
 
+var storageKeyMemes = 'Memes'
+var gMemes = []
+
 var gImgs = [
     { id: 1, url: 'imgs/square/1.jpg', keywords: ['angry', 'trump', 'politics'] },
     { id: 2, url: 'imgs/square/2.jpg', keywords: ['cute', 'dog'] },
@@ -24,6 +27,7 @@ var gMeme = {
         },
     ]
 }
+var storageKeyMeme = 'Memes'
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 function getMeme() {
@@ -115,4 +119,22 @@ function getRandomImg() {
 }
 function setRandomSentence() {
     gMeme.lines[gMeme.selectedLineIdx].txt = makeLorem(3)
+}
+
+function saveMemes() {
+    saveToStorage(storageKeyMemes, gMemes)
+}
+
+function getMemes() {
+    gMemes = loadFromStorage(storageKeyMemes) || []
+    return gMemes
+}
+
+function setMemeData(memeId) {
+    const { memeData } = getMemeById(memeId)
+    gMeme = memeData
+}
+
+function getMemeById(memeId) {
+    return gMemes.find(meme => meme.memeId === memeId)
 }

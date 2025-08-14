@@ -210,3 +210,39 @@ function getEvPos(ev) {
     return pos
 }
 
+function onSaveMeme() {
+
+    const memeSnapShot = gElCanvas.toDataURL()
+    const memeId = makeId(5)
+    const memeData = gMeme
+    const memeToSave = { memeId, memeData, memeSnapShot }
+    gMemes.unshift(memeToSave)
+    saveMemes()
+}
+
+function renderSavedMemes() {
+    const memes = getMemes()
+    let strHTML = ''
+    memes.onload =
+        strHTML = memes.map(meme =>
+            `<section class="gallery-item" onclick="onMemeClicked('${meme.memeId}')">
+            <img src="${meme.memeSnapShot}"><button class="btn-remove" onclick="onRemoveMeme(event,'${meme.memeId}')"
+            </section>`)
+
+    document.querySelector('.saved-memes-container').innerHTML = strHTML.join('')
+}
+
+function onShowMemes() {
+    hideElement('.memes-editor-container')
+    hideElement('.gallery-container')
+    showElement('.saved-memes-container')
+
+    renderSavedMemes()
+}
+
+function onMemeClicked(memeId) {
+    setMemeData(memeId)
+    hideElement('.saved-memes-container')
+    showElement('.memes-editor-container')
+    renderMeme()
+}

@@ -16,6 +16,16 @@
     border-radius: 15px;
 }
 
+.btn-random {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #c9e3f5;
+    margin-bottom: 1em;
+}
+
 .imgs-container {
     display: grid;
     gap: 10px;

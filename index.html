@@ -18,7 +18,7 @@
             <nav class="main-nav">
                 <ul class="main-nav-list clean-list">
                     <li onclick="onShowGallery()">Gallery</li>
-                    <li>Memes</li>
+                    <li onclick="onShowMemes()">Memes</li>
                     <li>About</li>
                 </ul>
             </nav>
@@ -29,10 +29,13 @@
     <main>
         <section class="gallery-container">
             <div class="Gallery-tools">
-                <div class="btn-font-container" onclick="onRandomMeme()">Randomize</div></button>
+                <div class="btn-font-container btn-random" onclick="onRandomMeme()">Randomize</div></button>
             </div>
             <div class="imgs-container">
             </div>
+        </section>
+        <section class="saved-memes-container">
+
         </section>
         <section class="memes-editor-container hide">
             <div class="canvas-container">
@@ -61,7 +64,10 @@
                     <div class="btn-font-control fa-solid fa-arrow-up" onclick="onMoveLine(+1)"></div>
                     <div class="btn-font-control fa-solid fa-arrow-down" onclick="onMoveLine(-1)"></div>
                     <div class="btn-font-control fa-solid fa-arrows-switch" onclick="onSwitchLine()"></div>
+                </section>
+                <section class="btn-font-container">
                     <div class="btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
+                    <div class="btn-font-control fa-solid fa-save" onclick="onSaveMeme()"></div>
                 </section>
                 <select id="font-picker" class="font-picker" onchange="onSetFontFamily(this.value)">
                     <option value="impact">Impact</option>
