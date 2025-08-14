@@ -32,7 +32,6 @@ function resizeCanvas() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    console.log(pos)
     onLineClicked(pos)
     const line = getSelectedLine()
     if (!line) return
@@ -210,3 +209,4 @@ function getEvPos(ev) {
     }
     return pos
 }
+

@@ -37,3 +37,10 @@ function onImageSelect(imgIdx) {
 }
 
 
+function onRandomMeme() {
+    const randImgIdx = getRandomImg()
+    onImageSelect(randImgIdx)
+    setRandomSentence()
+    renderMeme()
+}
+

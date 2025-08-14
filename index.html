@@ -28,7 +28,8 @@
 
     <main>
         <section class="gallery-container">
-            <div class="search-tool">
+            <div class="Gallery-tools">
+                <div class="btn-font-container" onclick="onRandomMeme()">Randomize</div></button>
             </div>
             <div class="imgs-container">
             </div>
@@ -62,7 +63,6 @@
                     <div class="btn-font-control fa-solid fa-arrows-switch" onclick="onSwitchLine()"></div>
                     <div class="btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
                 </section>
-
                 <select id="font-picker" class="font-picker" onchange="onSetFontFamily(this.value)">
                     <option value="impact">Impact</option>
                     <option value="arial">Arial</option>
@@ -79,8 +79,6 @@
                 <label for="font-size">Size:</label>
                 <input type="range" id="font-size" name="font-size" min="20" max="100" value=""
                     oninput="onSetFontSize(this.value)">
-
-
                 <a href="#" download="Canvas" onclick="onDownloadCanvas(this)">Download</a>
             </div>
         </section>

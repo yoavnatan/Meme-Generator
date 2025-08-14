@@ -1,6 +1,6 @@
 .main-header {
     background: #020024;
-    background: linear-gradient(297deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: linear-gradient(295deg, rgba(2, 0, 37, 1) 0%, rgba(9, 9, 121, 1) 35%, rgb(25, 205, 202) 100%);
     display: grid;
     grid-template-columns: inherit;
     color: whitesmoke;

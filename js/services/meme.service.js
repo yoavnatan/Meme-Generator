@@ -109,3 +109,10 @@ function dragLine(dx, dy) {
     line.pos.x += dx
     line.pos.y += dy
 }
+
+function getRandomImg() {
+    return [getRandomInt(0, gImgs.length)]
+}
+function setRandomSentence() {
+    gMeme.lines[gMeme.selectedLineIdx].txt = makeLorem(3)
+}
