@@ -35,18 +35,26 @@
                             oninput="renderGallery(this.value)">
                         <button class="btn btn-clear" onclick="onClearSearch()">X</button>
                         <i class="fa-solid fa-search"></i>
-                        <div class=" btn btn-gallery" onclick="onRandomMeme()">Randomize</div></button>
-                        <label class="btn btn-gallery btn-upload" for="upload-photo">upload </label>
-                        <input class="upload-photo" type="file" accept=".png, .jpg, .jpeg" id="upload-photo"
-                            name="upload-photo" oninput="onInputImg(event)">
                     </div>
                     <div class="search-keywords-container">
                     </div>
+                    <!-- <div class=" btn btn-gallery" onclick="onRandomMeme()">Randomize</div></button> -->
+                    <div class="upload-photo-container">
+                        <div class="btn-font-control fa-solid fa-magic" onclick="onRandomMeme()">
+                            <span>Randomize</span>
+                        </div>
+                        <!-- <label class="btn btn-gallery btn-upload" for="upload-photo">upload </label>
+                            <input class="upload-photo" type="file" accept=".png, .jpg, .jpeg" id="upload-photo"
+                                name="upload-photo" oninput="onInputImg(event)">
+                        </div> -->
+                        <div class="btn-font-control fa-solid fa-upload"> <span>Upload</span>
+                            <input class="upload-photo" type="file" accept=".png, .jpg, .jpeg" id="upload-photo"
+                                name="upload-photo" oninput="onInputImg(event)">
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-            <div class="imgs-container">
-            </div>
+                <div class="imgs-container">
+                </div>
         </section>
         <section class="saved-memes-container">
 

@@ -72,6 +72,14 @@
     content: "\f002"
 }
 
+.fa-solid.fa-upload::before {
+    content: "\f574"
+}
+
+.fa-solid.fa-magic::before {
+    content: "\f6e8"
+}
+
 
 
 /* Neucha */

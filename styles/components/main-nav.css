@@ -15,3 +15,57 @@
 .main-nav-list li {
     padding-inline-start: 2em;
 }
+
+body.menu-open .main-nav {
+    z-index: 2;
+}
+
+/* MOBILE ONLY */
+
+@media (max-width: 635px) {
+
+    .main-nav {
+        position: fixed;
+        display: grid;
+        /* place-content: center; */
+        justify-content: center;
+        justify-items: center;
+        top: 81px;
+        right: 0;
+        background: #020024;
+        background: linear-gradient(297deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgb(45, 119, 134) 100%);
+        width: 30dvw;
+        gap: 2em;
+        font-size: 1.2em;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        transition: grid-template-rows .5s;
+    }
+
+    .main-nav-list {
+        display: grid;
+        grid-template-columns: 132px;
+    }
+
+    .main-nav-list li {
+        border-block-end: 1px solid whitesmoke;
+        /* margin-block-start: 2em; */
+        /* margin-inline-start: 10px; */
+        margin-block: 15px;
+    }
+
+
+    .main-nav-list li {
+        padding: .4em;
+    }
+
+
+    .main-nav ul {
+        overflow: hidden;
+    }
+
+    body.menu-open .main-nav {
+        grid-template-rows: 1fr;
+
+    }
+}
