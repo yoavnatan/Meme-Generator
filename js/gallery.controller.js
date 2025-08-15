@@ -48,5 +48,9 @@ function onClickKeyWord(elKeyWord) {
 
     const keyWord = elKeyWord.innerText
     renderGallery(keyWord)
-
+    if (!gKeywordSearchCountMap[keyWord]) {
+        gKeywordSearchCountMap[keyWord] = 0
+    }
+    gKeywordSearchCountMap[keyWord]++
+    elKeyWord.style.fontSize = `${gKeywordSearchCountMap[keyWord] * 2 + 16}px`
 }

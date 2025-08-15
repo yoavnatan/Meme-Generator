@@ -27,6 +27,7 @@
     color: var(--clr-primary-1);
     font-weight: bold;
     color: whitesmoke;
+
 }
 
 .btn-gallery:hover {
@@ -64,13 +65,14 @@
     border-radius: 20px;
     padding: 10px;
     background-color: #b9fafa;
-    ;
+    border: .5px rgb(39, 120, 144) solid;
     margin-bottom: 1em;
     color: var(--clr-primary-1);
 }
 
 
 .search-line-container {
+
     position: relative;
     width: 180px;
     border-radius: 2em;
@@ -80,4 +82,23 @@
     position: absolute;
     top: 10px;
     left: 7em;
+}
+
+.search-keywords-container {
+    display: flex;
+    width: max-content;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(202, 255, 249);
+    margin-bottom: 1em;
+    color: var(--clr-primary-1);
+    border: .5px rgb(39, 120, 144) solid;
+
+}
+
+.search-keywords-container .keyword {
+    color: darkcyan;
+    margin: .3em;
+    cursor: pointer;
+    width: max-content;
 }
