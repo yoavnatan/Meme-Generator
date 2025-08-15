@@ -28,25 +28,22 @@
 
     <main>
         <section class="gallery-container">
-            <div class="Gallery-tools">
+            <div class="gallery-tools">
                 <div class="search-line-container">
-                    <input class="title-search" id="filter" name="filter" list="galleryList" placeholder="Search"
-                        oninput="renderGallery(this.value)">
-                    <div class="search-keywords-container">
-                        <div class="keyword" onclick="onClickKeyWord(this)">baby</div>
-                        <div class="keyword" onclick="onClickKeyWord(this)">cute</div>
-                        <div class="keyword" onclick="onClickKeyWord(this)">politics</div>
-                        <div class="keyword" onclick="onClickKeyWord(this)">dog</div>
-                        <div class="keyword" onclick="onClickKeyWord(this)">cat</div>
-                        <div class="keyword" onclick="onClickKeyWord(this)">funny</div>
-                        <div class="keyword" onclick="onClickKeyWord(this)">interseting</div>
+                    <div class="search-line-input-container">
+                        <input class="title-search" id="filter" name="filter" list="galleryList" placeholder="Search"
+                            oninput="renderGallery(this.value)">
+                        <button class="btn btn-clear" onclick="onClearSearch()">X</button>
+                        <i class="fa-solid fa-search"></i>
+                        <div class=" btn btn-gallery" onclick="onRandomMeme()">Randomize</div></button>
+                        <label class="btn btn-gallery btn-upload" for="upload-photo">upload </label>
+                        <input class="upload-photo" type="file" accept=".png, .jpg, .jpeg" id="upload-photo"
+                            name="upload-photo" oninput="onInputImg(event)">
                     </div>
-                    <i class="fa-solid fa-search"></i>
+                    <div class="search-keywords-container">
+                    </div>
                 </div>
-                <div class=" btn btn-gallery" onclick="onRandomMeme()">Randomize</div></button>
-                <label class="btn btn-gallery btn-upload" for="upload-photo">upload </label>
-                <input class="upload-photo" type="file" accept=".png, .jpg, .jpeg" id="upload-photo" name="upload-photo"
-                    oninput="onInputImg(event)">
+
             </div>
             <div class="imgs-container">
             </div>

@@ -12,6 +12,7 @@ function renderGallery(filterBy) {
     }
 
     document.querySelector('.imgs-container').innerHTML = strHTML
+    renderKeyWords()
 
     // strHTML = imgs.map(img =>
     //     `<section class="gallery-item-${img.id}">
@@ -31,6 +32,7 @@ function onShowGallery() {
 
 function onImageSelect(imgIdx) {
     hideElement('.gallery-container')
+    hideElement('.saved-memes-container')
     showElement('.memes-editor-container')
     setImg(imgIdx)
     renderMeme()
@@ -52,5 +54,15 @@ function onClickKeyWord(elKeyWord) {
         gKeywordSearchCountMap[keyWord] = 0
     }
     gKeywordSearchCountMap[keyWord]++
-    elKeyWord.style.fontSize = `${gKeywordSearchCountMap[keyWord] * 2 + 16}px`
+    document.querySelector('.title-search').value = keyWord
+    renderKeyWords()
+    // elKeyWord.style.fontSize = `${gKeywordSearchCountMap[keyWord] * 2 + 16}px`
+}
+
+function renderKeyWords() {
+    let strHTML = ''
+    for (const keyWord in gKeywordSearchCountMap) {
+        strHTML += `<span style="font-size:${gKeywordSearchCountMap[keyWord] * 2 + 16}px;" class="keyword" onclick="onClickKeyWord(this)" >${keyWord}</span>`
+    }
+    document.querySelector('.search-keywords-container').innerHTML = strHTML
 }

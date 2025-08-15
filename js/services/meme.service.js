@@ -12,7 +12,7 @@ var gImgs = [
     { id: 6, url: 'imgs/square/6.jpg', keywords: ['funny', 'tired', 'clumsy', 'man'] },
     { id: 7, url: 'imgs/square/7.jpg', keywords: ['funny', 'baby'] },
     { id: 8, url: 'imgs/square/8.jpg', keywords: ['interesting', 'love', 'fantasy', 'movie'] },
-    { id: 9, url: 'imgs/square/10.jpg', keywords: ['funny', 'kid', 'baby'] },]
+    { id: 9, url: 'imgs/square/10.jpg', keywords: ['politics', 'happy',] },]
 
 var gMeme = {
     selectedImgId: 5,
@@ -28,7 +28,7 @@ var gMeme = {
     ]
 }
 var storageKeyMeme = 'Memes'
-var gKeywordSearchCountMap = { 'funny': 0, 'cat': 0, 'baby': 0 }
+var gKeywordSearchCountMap = { 'funny': 3, 'cat': 5, 'baby': 1, 'politics': 8, 'happy': 10, 'movie': 1 }
 
 function getMeme() {
     return gMeme
@@ -141,7 +141,6 @@ function getMemeById(memeId) {
 
 function _filterImgs(filterBy) {
     let imgs = gImgs.slice()
-    console.log(filterBy)
     if (filterBy) {
         imgs = imgs.filter(img => img.keywords.map(keyword => keyword.toLowerCase()).join('').includes(filterBy.toLowerCase()))
     }

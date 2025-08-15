@@ -277,3 +277,8 @@ function renderInputImg(img) {
     renderMeme()
     gImgs.shift()
 }
+
+function onClearSearch() {
+    document.querySelector('.title-search').value = ''
+    renderGallery()
+}
