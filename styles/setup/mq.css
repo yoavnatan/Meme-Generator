@@ -8,10 +8,10 @@
         /* place-content: center; */
         justify-content: center;
         justify-items: center;
-        top: 94px;
+        top: 81px;
         right: 0;
         background: #020024;
-        background: linear-gradient(297deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+        background: linear-gradient(297deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgb(45, 119, 134) 100%);
         width: 30dvw;
         gap: 2em;
         font-size: 1.2em;
@@ -21,7 +21,13 @@
     }
 
     .main-nav-list {
-        display: grid
+        display: grid;
+        grid-template-columns: 132px;
+    }
+
+    .main-nav-list li {
+        border-block-end: 1px solid whitesmoke;
+        margin-block-start: 1em;
     }
 
 

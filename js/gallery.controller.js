@@ -1,7 +1,7 @@
 'use strict'
 
-function renderGallery() {
-    const imgs = getImgs()
+function renderGallery(filterBy) {
+    const imgs = getImgs(filterBy)
     let strHTML = ''
 
     for (var i = 0; i < imgs.length; i++) {
@@ -44,3 +44,9 @@ function onRandomMeme() {
     renderMeme()
 }
 
+function onClickKeyWord(elKeyWord) {
+
+    const keyWord = elKeyWord.innerText
+    renderGallery(keyWord)
+
+}

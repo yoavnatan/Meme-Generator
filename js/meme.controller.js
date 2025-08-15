@@ -246,3 +246,34 @@ function onMemeClicked(memeId) {
     showElement('.memes-editor-container')
     renderMeme()
 }
+
+
+function onInputImg(ev) {
+    loadImageFromInput(ev, renderInputImg)
+}
+
+function loadImageFromInput(ev, onImageReady) {
+    // document.querySelector('.share-container').innerHTML = ''
+    const reader = new FileReader()
+
+    reader.onload = (event) => {
+        const img = new Image()
+        img.src = event.target.result
+
+        img.onload = () => {
+            onImageReady(img)
+        }
+    }
+    reader.readAsDataURL(ev.target.files[0])
+}
+
+function renderInputImg(img) {
+    const newImg = { id: 0, url: img.src }
+    gMeme.selectedImgId = 0;
+    gImgs.unshift(newImg)
+    gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
+    hideElement('.gallery-container')
+    showElement('.memes-editor-container')
+    renderMeme()
+    gImgs.shift()
+}

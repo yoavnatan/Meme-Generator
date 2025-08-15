@@ -28,14 +28,14 @@ var gMeme = {
     ]
 }
 var storageKeyMeme = 'Memes'
-var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
+var gKeywordSearchCountMap = { 'funny': 0, 'cat': 0, 'baby': 0 }
 
 function getMeme() {
     return gMeme
 }
 
-function getImgs() {
-    return gImgs
+function getImgs(filterBy) {
+    return _filterImgs(filterBy)
 }
 function setLineTxt(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
@@ -137,4 +137,13 @@ function setMemeData(memeId) {
 
 function getMemeById(memeId) {
     return gMemes.find(meme => meme.memeId === memeId)
+}
+
+function _filterImgs(filterBy) {
+    let imgs = gImgs.slice()
+    console.log(filterBy)
+    if (filterBy) {
+        imgs = imgs.filter(img => img.keywords.map(keyword => keyword.toLowerCase()).join('').includes(filterBy.toLowerCase()))
+    }
+    return imgs
 }

@@ -64,6 +64,16 @@
     content: "\f0c7"
 }
 
+.fa-solid.fa-download::before {
+    content: "\f019"
+}
+
+.fa-solid.fa-search::before {
+    content: "\f002"
+}
+
+
+
 /* Neucha */
 
 @font-face {

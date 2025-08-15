@@ -22,14 +22,25 @@
                     <li>About</li>
                 </ul>
             </nav>
-            <button class="btn-toggle-menu" type="button" onclick="toggleMenu()">☰</button>
+            <button class="btn btn-toggle-menu" type="button" onclick="toggleMenu()">☰</button>
         </div>
     </header>
 
     <main>
         <section class="gallery-container">
             <div class="Gallery-tools">
-                <div class="btn-font-container btn-random" onclick="onRandomMeme()">Randomize</div></button>
+                <div class="search-line-container">
+                    <input class="title-search" id="filter" name="filter" list="galleryList" placeholder="Search"
+                        oninput="renderGallery(this.value)">
+                    <div class="search-keywords-container">
+                        <div class="keyword" onclick="onClickKeyWord(this)">Cute</div>
+                    </div>
+                    <i class="fa-solid fa-search"></i>
+                </div>
+                <div class=" btn btn-gallery" onclick="onRandomMeme()">Randomize</div></button>
+                <label class="btn btn-gallery btn-upload" for="upload-photo">upload </label>
+                <input class="upload-photo" type="file" accept=".png, .jpg, .jpeg" id="upload-photo" name="upload-photo"
+                    oninput="onInputImg(event)">
             </div>
             <div class="imgs-container">
             </div>
@@ -53,21 +64,26 @@
                         <input class="color-picker" type="color" id="color-picker" name="color-picker"
                             oninput="onColorPick(this.value)">
                     </div>
-                    <div class="btn-font-control fa-solid fa-plus" onclick="onAddLine()"></div>
-                    <div class="btn-font-control fa-solid fa-align-left" onclick="onAlignLeft()"></div>
-                    <div class="btn-font-control fa-solid fa-align-center" onclick="onAlignCenter()"></div>
-                    <div class="btn-font-control fa-solid fa-align-right" onclick="onAlignRight()"></div>
+                    <div class="btn btn-font-control fa-solid fa-plus" onclick="onAddLine()"></div>
+                    <div class="btn btn-font-control fa-solid fa-align-left" onclick="onAlignLeft()"></div>
+                    <div class="btn btn-font-control fa-solid fa-align-center" onclick="onAlignCenter()"></div>
+                    <div class="btn btn-font-control fa-solid fa-align-right" onclick="onAlignRight()"></div>
                 </section>
-                <section class="btn-font-container-second flex">
-                    <div class="btn-font-control fa-solid fa-scale-up" onclick="onScaleTxt(+5)"></div>
-                    <div class="btn-font-control fa-solid fa-scale-down" onclick="onScaleTxt(-5)"></div>
-                    <div class="btn-font-control fa-solid fa-arrow-up" onclick="onMoveLine(+1)"></div>
-                    <div class="btn-font-control fa-solid fa-arrow-down" onclick="onMoveLine(-1)"></div>
-                    <div class="btn-font-control fa-solid fa-arrows-switch" onclick="onSwitchLine()"></div>
+                <section class="btn btn-font-container-second flex">
+                    <div class="btn btn-font-control fa-solid fa-scale-up" onclick="onScaleTxt(+5)"></div>
+                    <div class="btn btn-font-control fa-solid fa-scale-down" onclick="onScaleTxt(-5)"></div>
+                    <div class="btn btn-font-control fa-solid fa-arrow-up" onclick="onMoveLine(+1)"></div>
+                    <div class="btn btn-font-control fa-solid fa-arrow-down" onclick="onMoveLine(-1)"></div>
+                    <div class="btn btn-font-control fa-solid fa-arrows-switch" onclick="onSwitchLine()"></div>
+                    <div class="btn btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
+
                 </section>
-                <section class="btn-font-container">
-                    <div class="btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
-                    <div class="btn-font-control fa-solid fa-save" onclick="onSaveMeme()"></div>
+                <section class="btn btn-font-container">
+
+                    <div class="btn btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
+                    <div class="btn btn-font-control fa-solid fa-save" onclick="onSaveMeme()"></div>
+                    <a class="btn btn-font-control fa-solid fa-download" href=" #" download="Canvas"
+                        onclick="onDownloadCanvas(this)"></a>
                 </section>
                 <select id="font-picker" class="font-picker" onchange="onSetFontFamily(this.value)">
                     <option value="impact">Impact</option>
@@ -85,11 +101,22 @@
                 <label for="font-size">Size:</label>
                 <input type="range" id="font-size" name="font-size" min="20" max="100" value=""
                     oninput="onSetFontSize(this.value)">
-                <a href="#" download="Canvas" onclick="onDownloadCanvas(this)">Download</a>
+
             </div>
         </section>
     </main>
-
+    <datalist id="galleryList">
+        <option value="funny"></option>
+        <option value="politics"></option>
+        <option value="pets"></option>
+        <option value="dog"></option>
+        <option value="cat"></option>
+        <option value="baby"></option>
+        <option value="kid"></option>
+        <option value="cute"></option>
+        <option value="angry"></option>
+        <option value="trunp"></option>
+    </datalist>
 </body>
 
 <script src="js/services/storage.service.js"></script>

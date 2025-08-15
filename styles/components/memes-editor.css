@@ -17,6 +17,12 @@
 .color-picker {
     cursor: pointer;
     font-size: 2em;
+    color: var(--clr-primary-1)
+}
+
+.btn-font-control:hover,
+.color-picker:hover {
+    color: var(--clr-primary-2)
 }
 
 .btn-font-control.fa-color {

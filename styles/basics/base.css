@@ -24,3 +24,12 @@ h6 {
 }
 
 /* TODO: Nunito font */
+
+.btn {
+    cursor: pointer;
+}
+
+a {
+    color: var(--clr-primary-1);
+    text-decoration: none;
+}
