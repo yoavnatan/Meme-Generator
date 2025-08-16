@@ -13,6 +13,8 @@ function onInit() {
 }
 
 function renderMeme() {
+    document.querySelector('.share-container').innerHTML = ''
+
     resizeCanvas()
     const { selectedImgId: imgId, selectedLineIdx: lineIdx, lines } = getMeme()
     let img = new Image
@@ -253,7 +255,7 @@ function onInputImg(ev) {
 }
 
 function loadImageFromInput(ev, onImageReady) {
-    // document.querySelector('.share-container').innerHTML = ''
+    document.querySelector('.share-container').innerHTML = ''
     const reader = new FileReader()
 
     reader.onload = (event) => {
@@ -281,4 +283,37 @@ function renderInputImg(img) {
 function onClearSearch() {
     document.querySelector('.title-search').value = ''
     renderGallery()
+}
+
+function onUploadToFB(url) {
+    // console.log('url:', url)
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&t=${url}`)
+}
+
+
+function onUploadImg(ev) {
+    ev.preventDefault()
+    document.querySelector('.share-container').innerHTML = ''
+    const canvasData = gElCanvas.toDataURL('image/jpeg')
+
+    // After a successful upload, allow the user to share on Facebook
+    function onSuccess(uploadedImgUrl) {
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        document.querySelector('.share-container').innerHTML = `
+            <a href="${uploadedImgUrl}">Image Url</a>
+            <p>Image url: ${uploadedImgUrl}</p>
+           
+            <button class="btn-facebook" target="_blank" onclick="onUploadToFB('${encodedUploadedImgUrl}')">
+                Share on Facebook  
+            </button>
+        `
+    }
+
+    uploadImg(canvasData, onSuccess)
+}
+
+function onDrawSticker(elSticker) {
+    gSticker = elSticker.innerText
+    addLine()
+    renderMeme()
 }

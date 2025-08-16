@@ -2,6 +2,7 @@
 
 var storageKeyMemes = 'Memes'
 var gMemes = []
+var gSticker
 
 var gImgs = [
     { id: 1, url: 'imgs/square/1.jpg', keywords: ['angry', 'trump', 'politics'] },
@@ -12,7 +13,13 @@ var gImgs = [
     { id: 6, url: 'imgs/square/6.jpg', keywords: ['funny', 'tired', 'clumsy', 'man'] },
     { id: 7, url: 'imgs/square/7.jpg', keywords: ['funny', 'baby'] },
     { id: 8, url: 'imgs/square/8.jpg', keywords: ['interesting', 'love', 'fantasy', 'movie'] },
-    { id: 9, url: 'imgs/square/10.jpg', keywords: ['politics', 'happy',] },]
+    { id: 9, url: 'imgs/square/10.jpg', keywords: ['politics', 'happy',] },
+    { id: 10, url: 'imgs/square/16.jpg', keywords: ['movie', 'funny',] },
+    { id: 9, url: 'imgs/square/17.jpg', keywords: ['politics'] },
+    { id: 9, url: 'imgs/various-ratios/2.jpg', keywords: ['movie', 'happy'] },
+    { id: 9, url: 'imgs/various-ratios/One-Does-Not-Simply.jpg', keywords: ['celeb', 'movie'] },
+    { id: 9, url: 'imgs/various-ratios/Oprah-You-Get-A.jpg', keywords: ['celeb', 'oprah'] }]
+
 
 var gMeme = {
     selectedImgId: 5,
@@ -23,7 +30,14 @@ var gMeme = {
             size: 40,
             color: 'white',
             fontFamily: 'Impact',
-            pos: { x: 30, y: 80 }
+            pos: { x: 100, y: 80 }
+        },
+        {
+            txt: `Add text here`,
+            size: 40,
+            color: 'white',
+            fontFamily: 'Impact',
+            pos: { x: 100, y: 380 }
         },
     ]
 }
@@ -51,14 +65,15 @@ function scaleTxt(diff) {
 
 function addLine() {
     const newLine = {
-        txt: `Add text here`,
-        size: 30,
+        txt: gSticker || `Add text here`,
+        size: 40,
         color: 'white',
         fontFamily: 'Impact',
-        pos: { x: 30, y: 250 }
+        pos: { x: 100, y: 230 }
     }
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx++
+    gSticker = ''
 }
 
 function switchLine() {
@@ -145,4 +160,23 @@ function _filterImgs(filterBy) {
         imgs = imgs.filter(img => img.keywords.map(keyword => keyword.toLowerCase()).join('').includes(filterBy.toLowerCase()))
     }
     return imgs
+}
+
+async function uploadImg(imgData, onSuccess) {
+    const CLOUD_NAME = 'webify'
+    const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+    const formData = new FormData()
+    formData.append('file', imgData)
+    formData.append('upload_preset', 'webify')
+    try {
+        const res = await fetch(UPLOAD_URL, {
+            method: 'POST',
+            body: formData
+        })
+        const data = await res.json()
+        onSuccess(data.secure_url)
+
+    } catch (err) {
+        console.log(err)
+    }
 }

@@ -94,7 +94,6 @@
     /* grid-template-columns: 1fr 1fr; */
     place-self: center;
     max-width: 500px;
-    gap: 10px;
     border-radius: 2em;
 }
 

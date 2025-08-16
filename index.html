@@ -89,13 +89,7 @@
                     <div class="btn btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
 
                 </section>
-                <section class="btn btn-font-container">
 
-                    <div class="btn btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
-                    <div class="btn btn-font-control fa-solid fa-save" onclick="onSaveMeme()"></div>
-                    <a class="btn btn-font-control fa-solid fa-download" href=" #" download="Canvas"
-                        onclick="onDownloadCanvas(this)"></a>
-                </section>
                 <select id="font-picker" class="font-picker" onchange="onSetFontFamily(this.value)">
                     <option value="impact">Impact</option>
                     <option value="arial">Arial</option>
@@ -112,9 +106,30 @@
                 <label for="font-size">Size:</label>
                 <input type="range" id="font-size" name="font-size" min="20" max="100" value=""
                     oninput="onSetFontSize(this.value)">
+                <section class="btn-font-container">
+                    <ul class="stickers clean-list flex space-between">
+                        <li onclick="onDrawSticker(this)">😀</li>
+                        <li onclick="onDrawSticker(this)">🥰</li>
+                        <li onclick="onDrawSticker(this)">🤑</li>
+                        <li onclick="onDrawSticker(this)">🪼</li>
+                        <li onclick="onDrawSticker(this)">🐸</li>
+                        <li onclick="onDrawSticker(this)">🍒</li>
+                        <li onclick="onDrawSticker(this)">🦁</li>
+                    </ul>
+                </section>
+                <section class="btn-font-container-second flex">
 
+                    <div class="btn btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
+                    <div class="btn btn-font-control fa-solid fa-save" onclick="onSaveMeme()"></div>
+                    <a class="btn btn-font-control fa-solid fa-download" href=" #" download="Canvas"
+                        onclick="onDownloadCanvas(this)"></a>
+                    <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
+                        <input name="img" id="imgData" type="hidden" />
+                        <button class="btn" type="submit">Upload to Cloudinary</button>
+                    </form>
+                    <div class="share-container"></div>
+                </section>
             </div>
-        </section>
     </main>
     <datalist id="galleryList">
         <option value="funny"></option>

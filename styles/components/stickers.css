@@ -1,0 +1,8 @@
+.stickers {
+    font-size: 2.5em;
+    flex: 1;
+}
+
+.stickers li {
+    cursor: pointer;
+}
