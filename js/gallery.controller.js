@@ -35,6 +35,7 @@ function onImageSelect(imgIdx) {
     hideElement('.saved-memes-container')
     showElement('.memes-editor-container')
     setImg(imgIdx)
+    document.querySelector('.text-editor').focus()
     renderMeme()
 }
 

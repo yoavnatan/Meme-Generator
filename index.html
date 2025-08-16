@@ -38,16 +38,12 @@
                     </div>
                     <div class="search-keywords-container">
                     </div>
-                    <!-- <div class=" btn btn-gallery" onclick="onRandomMeme()">Randomize</div></button> -->
                     <div class="upload-photo-container">
                         <div class="btn-font-control fa-solid fa-magic" onclick="onRandomMeme()">
-                            <span>Randomize</span>
+                            <span>Randomize Meme</span>
                         </div>
-                        <!-- <label class="btn btn-gallery btn-upload" for="upload-photo">upload </label>
-                            <input class="upload-photo" type="file" accept=".png, .jpg, .jpeg" id="upload-photo"
-                                name="upload-photo" oninput="onInputImg(event)">
-                        </div> -->
-                        <div class="btn-font-control fa-solid fa-upload"> <span>Upload</span>
+
+                        <div class="btn-font-control fa-solid fa-upload"> <span>Upload Img from Device</span>
                             <input class="upload-photo" type="file" accept=".png, .jpg, .jpeg" id="upload-photo"
                                 name="upload-photo" oninput="onInputImg(event)">
                         </div>
@@ -68,7 +64,7 @@
             </div>
             <div class="edit-tools-container">
                 <h2>Edit Meme</h2>
-                <input type="text" id="text-editor" name="text-editor" placeholder="Add text"
+                <input class="text-editor" type="text" id="text-editor" name="text-editor" placeholder="Add text"
                     oninput="onSetLineTxt(this.value)">
                 <section class="btn-font-container">
                     <div class="btn-font-control fa-solid fa-color">
@@ -127,8 +123,8 @@
                         <input name="img" id="imgData" type="hidden" />
                         <button class="btn" type="submit">Upload to Cloudinary</button>
                     </form>
-                    <div class="share-container"></div>
                 </section>
+                <div class="share-container"></div>
             </div>
     </main>
     <datalist id="galleryList">
@@ -141,7 +137,9 @@
         <option value="kid"></option>
         <option value="cute"></option>
         <option value="angry"></option>
-        <option value="trunp"></option>
+        <option value="trump"></option>
+        <option value="celeb"></option>
+        <option value="movie"></option>
     </datalist>
 </body>
 

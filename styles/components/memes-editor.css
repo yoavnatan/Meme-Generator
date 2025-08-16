@@ -52,6 +52,7 @@
 
 .btn-font-container-second {
     justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #ffffff;
     border-radius: 20px;

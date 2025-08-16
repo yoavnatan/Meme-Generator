@@ -34,7 +34,7 @@ function resizeCanvas() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    onLineClicked(pos)
+    onLineClicked(ev, pos)
     const line = getSelectedLine()
     if (!line) return
     gIsMouseDown = true
@@ -100,11 +100,18 @@ function onScaleTxt(diff) {
 function onAddLine() {
     addLine()
     renderMeme()
+    clearTextEditor()
+}
+
+function clearTextEditor() {
+    document.querySelector('.text-editor').value = ''
+
 }
 
 function onSwitchLine() {
     switchLine()
     renderMeme()
+    clearTextEditor()
 }
 
 function onColorPick(elColor) {
@@ -129,7 +136,9 @@ function drawFrame(lineIdx) {
 
 }
 
-function onLineClicked(position) {
+function onLineClicked(ev, position) {
+    event.preventDefault()
+    clearTextEditor()
     const { x: offsetX, y: offsetY } = position
     const clickedLine = gMeme.lines.findIndex(line => {
 
@@ -139,6 +148,7 @@ function onLineClicked(position) {
     if (clickedLine >= 0) {
         gMeme.selectedLineIdx = clickedLine
         renderMeme()
+        document.querySelector('.text-editor').focus()
     }
     else {
         gMeme.selectedLineIdx = null
@@ -300,7 +310,6 @@ function onUploadImg(ev) {
     function onSuccess(uploadedImgUrl) {
         const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
         document.querySelector('.share-container').innerHTML = `
-            <a href="${uploadedImgUrl}">Image Url</a>
             <p>Image url: ${uploadedImgUrl}</p>
            
             <button class="btn-facebook" target="_blank" onclick="onUploadToFB('${encodedUploadedImgUrl}')">
