@@ -1,8 +1,32 @@
 .stickers {
     font-size: 2.5em;
     flex: 1;
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+    max-width: 360px;
+    list-style: none;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
 }
 
 .stickers li {
     cursor: pointer;
+    flex-shrink: 0;
+    transition: .2s;
+    scroll-behavior: smooth;
+    /* scroll-snap-align: center; */
+}
+
+.stickers li:hover {
+    scale: 1.3;
+}
+
+.stickers li:hover+li {
+    scale: 1.15;
+}
+
+.stickers li:has(+li:hover) {
+    scale: 1.15;
 }

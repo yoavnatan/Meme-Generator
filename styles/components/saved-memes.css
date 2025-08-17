@@ -1,0 +1,37 @@
+.saved-memes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, .5fr));
+    grid-column: 1/-1;
+    padding-top: 25px;
+    /* display: flex;
+    flex-direction: column; */
+
+}
+
+.saved-memes-container .gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.saved-memes-container .gallery-item img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.saved-memes-container.hide {
+    display: none;
+}
+
+
+.btn-remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.2em .8em;
+    background-color: rgb(61, 152, 177);
+    color: whitesmoke;
+    border-radius: 4px;
+    border: 0;
+    font-size: 1.1em;
+    cursor: pointer;
+}

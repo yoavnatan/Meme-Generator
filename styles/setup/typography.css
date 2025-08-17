@@ -80,6 +80,10 @@
     content: "\f6e8"
 }
 
+.fa-solid.fa-rotate::before {
+    content: "\f2f9"
+}
+
 
 
 /* Neucha */
@@ -119,4 +123,11 @@
 @font-face {
     font-family: pacificio;
     src: url('./fonts/pacificio/Pacifico-Regular.ttf');
+}
+
+/* Nunito */
+
+@font-face {
+    font-family: nunito;
+    src: url('./fonts/nunito/Nunito-Regular.ttf');
 }

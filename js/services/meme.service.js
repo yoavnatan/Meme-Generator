@@ -30,14 +30,14 @@ var gMeme = {
             size: 40,
             color: 'white',
             fontFamily: 'Impact',
-            pos: { x: 100, y: 80 }
+            pos: { x: 100, y: 80 },
         },
         {
             txt: `Add text here`,
             size: 40,
             color: 'white',
             fontFamily: 'Impact',
-            pos: { x: 100, y: 380 }
+            pos: { x: 100, y: 380 },
         },
     ]
 }
@@ -60,6 +60,7 @@ function setImg(imgIdx) {
 }
 
 function scaleTxt(diff) {
+
     gMeme.lines[gMeme.selectedLineIdx].size += diff
 }
 
@@ -179,4 +180,15 @@ async function uploadImg(imgData, onSuccess) {
     } catch (err) {
         console.log(err)
     }
+}
+
+function rotateLine() {
+    gMeme.lines[gMeme.selectedLineIdx].deg += 0.45
+
+}
+
+function removeMeme(memeIdx) {
+    const idx = gMemes.findIndex(meme => meme.memeId === memeIdx)
+    gMemes.splice(idx, 1)
+    saveMemes()
 }

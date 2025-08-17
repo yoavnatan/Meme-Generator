@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(237 242 250);
-    font-family: lato-regular;
+    font-family: nunito;
     max-height: 100dvh;
 }
 
@@ -31,4 +31,8 @@ h6 {
 a {
     color: var(--clr-primary-1);
     text-decoration: none;
+}
+
+input {
+    font: inherit;
 }

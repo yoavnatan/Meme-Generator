@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.main-nav li:hover {
+    color: var(--clr-base-1);
+}
+
 .main-nav {
     flex: 1;
     justify-content: space-between;

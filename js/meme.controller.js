@@ -73,6 +73,7 @@ function renderTxt(lines) {
         gCtx.font = `${line.size}px ${line.fontFamily}`
         // gCtx.textAlign = 'left'
         // gCtx.textBaseline = 'middle'
+        // gCtx.setTransform(1, 0, 0, 1, 0, 0);
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
         line.width = gCtx.measureText(line.txt).width
@@ -122,11 +123,12 @@ function onColorPick(elColor) {
 
 function drawRect(x, y, width, height) {
     gCtx.beginPath()
-    gCtx.strokeStyle = 'blue'
+    gCtx.strokeStyle = 'darkblue'
     // gCtx.fillStyle = 'yellow'
-    gCtx.lineWidth = 3
+    gCtx.lineWidth = 4
     // gCtx.fillRect(x, y, gBrush.size, gBrush.size)
     gCtx.strokeRect(x - 5, y + 5, width + 10, height - 10)
+
 
 }
 
@@ -238,7 +240,7 @@ function renderSavedMemes() {
     memes.onload =
         strHTML = memes.map(meme =>
             `<section class="gallery-item" onclick="onMemeClicked('${meme.memeId}')">
-            <img src="${meme.memeSnapShot}"><button class="btn-remove" onclick="onRemoveMeme(event,'${meme.memeId}')"
+            <img src="${meme.memeSnapShot}"><button class="btn-remove" onclick="onRemoveMeme(event,'${meme.memeId}')">X</button>
             </section>`)
 
     document.querySelector('.saved-memes-container').innerHTML = strHTML.join('')
@@ -326,3 +328,11 @@ function onDrawSticker(elSticker) {
     addLine()
     renderMeme()
 }
+
+function onRemoveMeme(ev, memeIdx) {
+    ev.stopPropagation()
+
+    removeMeme(memeIdx)
+    renderSavedMemes()
+}
+

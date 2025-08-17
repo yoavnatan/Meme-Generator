@@ -77,12 +77,12 @@
                     <div class="btn btn-font-control fa-solid fa-align-right" onclick="onAlignRight()"></div>
                 </section>
                 <section class="btn btn-font-container-second flex">
-                    <div class="btn btn-font-control fa-solid fa-scale-up" onclick="onScaleTxt(+5)"></div>
+                    <div title="Scale" class="btn btn-font-control fa-solid fa-scale-up" onclick="onScaleTxt(+5)"></div>
                     <div class="btn btn-font-control fa-solid fa-scale-down" onclick="onScaleTxt(-5)"></div>
                     <div class="btn btn-font-control fa-solid fa-arrow-up" onclick="onMoveLine(+1)"></div>
                     <div class="btn btn-font-control fa-solid fa-arrow-down" onclick="onMoveLine(-1)"></div>
                     <div class="btn btn-font-control fa-solid fa-arrows-switch" onclick="onSwitchLine()"></div>
-                    <div class="btn btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
+                    <!-- <div title="Rotate" class="btn btn-font-control fa-solid fa-rotate" onclick="onRotateLine()"></div> -->
 
                 </section>
 
@@ -100,7 +100,7 @@
                     <option value="poppins">Poppins</option>
                 </select>
                 <label for="font-size">Size:</label>
-                <input type="range" id="font-size" name="font-size" min="20" max="100" value=""
+                <input class="size-range" type="range" id="font-size" name="font-size" min="20" max="100" value=""
                     oninput="onSetFontSize(this.value)">
                 <section class="btn-font-container">
                     <ul class="stickers clean-list flex space-between">
@@ -111,6 +111,12 @@
                         <li onclick="onDrawSticker(this)">🐸</li>
                         <li onclick="onDrawSticker(this)">🍒</li>
                         <li onclick="onDrawSticker(this)">🦁</li>
+                        <li onclick="onDrawSticker(this)">🤣</li>
+                        <li onclick="onDrawSticker(this)">🍀</li>
+                        <li onclick="onDrawSticker(this)">♥️</li>
+                        <li onclick="onDrawSticker(this)">⭐️</li>
+                        <li onclick="onDrawSticker(this)">🤡</li>
+                        <li onclick="onDrawSticker(this)">🎁</li>
                     </ul>
                 </section>
                 <section class="btn-font-container-second flex">
