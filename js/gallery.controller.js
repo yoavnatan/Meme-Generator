@@ -67,3 +67,41 @@ function renderKeyWords() {
     }
     document.querySelector('.search-keywords-container').innerHTML = strHTML
 }
+
+function onSetLang() {
+
+    changeDirection()
+    setLang()
+    doTrans()
+
+}
+
+
+function changeDirection() {
+    if (gLang === 'en') {
+        document.querySelector('.trans').innerText = 'en'
+        // document.querySelector('body').style.direction = 'rtl'
+    }
+    else if (gLang = 'he') {
+        document.querySelector('.trans').innerText = 'עב'
+        // document.querySelector('body').style.direction = 'ltr'
+
+    }
+}
+
+function doTrans() {
+
+    const els = document.querySelectorAll('[data-trans]')
+    els.forEach(el => {
+        const transKey = el.dataset.trans
+        const trans = getTrans(transKey)
+        el.innerText = trans
+    })
+    const transKey = document.querySelector('#filter').dataset.trans
+    const trans = getTrans(transKey)
+    document.querySelector('#filter').placeholder = trans
+    const transKey2 = document.querySelector('#text-editor').dataset.trans
+    const trans2 = getTrans(transKey2)
+    document.querySelector('#text-editor').placeholder = trans2
+
+}

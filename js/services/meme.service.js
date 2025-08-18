@@ -20,6 +20,59 @@ var gImgs = [
     { id: 9, url: 'imgs/various-ratios/One-Does-Not-Simply.jpg', keywords: ['celeb', 'movie'] },
     { id: 9, url: 'imgs/various-ratios/Oprah-You-Get-A.jpg', keywords: ['celeb', 'oprah'] }]
 
+var gTrans = {
+    appTitle: {
+        en: 'Memes Generator',
+        he: 'מחולל הממים'
+    },
+    gallery: {
+        en: 'Gallery',
+        he: 'גלריה'
+    },
+    memes: {
+        en: 'Memes',
+        he: 'ממים'
+    },
+    about: {
+        en: 'About',
+        he: 'אודות'
+    },
+    uploadGallery: {
+        en: 'Upload Img from Device',
+        he: 'העלה תמונה'
+    },
+    editMeme: {
+        en: 'Edit Meme',
+        he: 'ערוך מים'
+    },
+    search: {
+        en: 'Search',
+        he: 'חפש'
+    },
+    randomize: {
+        en: 'Randomize Meme',
+        he: 'מם אקראי'
+    },
+    addText: {
+        en: 'Add text',
+        he: 'הוסף טקסט'
+    },
+    size: {
+        en: 'size',
+        he: 'גודל'
+    }
+}
+var gLang = 'en'
+
+function setLang() {
+    if (gLang === 'en') {
+        gLang = 'he'
+    }
+    else if (gLang = 'he') {
+        gLang = 'en'
+
+    }
+}
 
 var gMeme = {
     selectedImgId: 5,
@@ -81,6 +134,7 @@ function switchLine() {
     if (gMeme.lines.length === 1) return
     if (!gMeme.lines[gMeme.selectedLineIdx + 1]) gMeme.selectedLineIdx = 0
     else gMeme.selectedLineIdx++
+    document.querySelector('.text-editor').focus()
     console.log(gMeme.selectedLineIdx)
 }
 
@@ -191,4 +245,9 @@ function removeMeme(memeIdx) {
     const idx = gMemes.findIndex(meme => meme.memeId === memeIdx)
     gMemes.splice(idx, 1)
     saveMemes()
+}
+
+function getTrans(transKey) {
+    return gTrans[transKey][gLang]
+
 }

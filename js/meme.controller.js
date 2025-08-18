@@ -71,13 +71,11 @@ function renderTxt(lines) {
         gCtx.strokeStyle = 'black'
         gCtx.fillStyle = `${line.color}`
         gCtx.font = `${line.size}px ${line.fontFamily}`
-        // gCtx.textAlign = 'left'
-        // gCtx.textBaseline = 'middle'
-        // gCtx.setTransform(1, 0, 0, 1, 0, 0);
+        gCtx.textBaseline = 'top'
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
         line.width = gCtx.measureText(line.txt).width
-        line.height = gCtx.measureText(line.txt).hangingBaseline * -1
+        line.height = gCtx.measureText(line.txt).actualBoundingBoxDescent
     })
 
 }
@@ -127,7 +125,7 @@ function drawRect(x, y, width, height) {
     // gCtx.fillStyle = 'yellow'
     gCtx.lineWidth = 4
     // gCtx.fillRect(x, y, gBrush.size, gBrush.size)
-    gCtx.strokeRect(x - 5, y + 5, width + 10, height - 10)
+    gCtx.strokeRect(x - 5, y - 5, width + 10, height + 10)
 
 
 }
@@ -139,13 +137,13 @@ function drawFrame(lineIdx) {
 }
 
 function onLineClicked(ev, position) {
-    event.preventDefault()
+    ev.preventDefault()
     clearTextEditor()
     const { x: offsetX, y: offsetY } = position
     const clickedLine = gMeme.lines.findIndex(line => {
 
         return (offsetX >= line.pos.x && offsetX <= line.pos.x + line.width + 5 &&
-            offsetY <= line.pos.y && offsetY >= line.pos.y + line.height)
+            offsetY >= line.pos.y && offsetY <= line.pos.y + line.height + 4)
     })
     if (clickedLine >= 0) {
         gMeme.selectedLineIdx = clickedLine
@@ -155,6 +153,7 @@ function onLineClicked(ev, position) {
     else {
         gMeme.selectedLineIdx = null
         renderMeme()
+        document.querySelector('.text-editor').blur()
     }
 }
 
