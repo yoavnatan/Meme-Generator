@@ -1,5 +1,6 @@
 .saved-memes-container {
     display: grid;
+    gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(250px, .5fr));
     grid-column: 1/-1;
     padding-top: 25px;
@@ -34,4 +35,8 @@
     border: 0;
     font-size: 1.1em;
     cursor: pointer;
+}
+
+.empty-msg {
+    color: lightslategray;
 }

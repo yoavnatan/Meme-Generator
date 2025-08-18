@@ -14,19 +14,12 @@ function renderGallery(filterBy) {
     document.querySelector('.imgs-container').innerHTML = strHTML
     renderKeyWords()
 
-    // strHTML = imgs.map(img =>
-    //     `<section class="gallery-item-${img.id}">
-    //    <img src="${img.url}">
-    //  </section>`
-    // )
-
-    // document.querySelector('.imgs-container').innerHTML = strHTML.join('')
 }
 
 function onShowGallery() {
     hideElement('.memes-editor-container')
     showElement('.gallery-container')
-
+    closeMenu()
     renderGallery()
 }
 

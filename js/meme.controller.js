@@ -231,25 +231,36 @@ function onSaveMeme() {
     const memeToSave = { memeId, memeData, memeSnapShot }
     gMemes.unshift(memeToSave)
     saveMemes()
+    flashMsg(`Meme Saved`)
+
 }
 
 function renderSavedMemes() {
     const memes = getMemes()
     let strHTML = ''
-    memes.onload =
-        strHTML = memes.map(meme =>
-            `<section class="gallery-item" onclick="onMemeClicked('${meme.memeId}')">
+    if (!memes || memes.length === 0) {
+        strHTML = `<h1 class="empty-msg">No memes yet...</h1>`
+        document.querySelector('.saved-memes-container').innerHTML = strHTML
+
+    }
+    else {
+        memes.onload =
+            strHTML = memes.map(meme =>
+                `<section class="gallery-item" onclick="onMemeClicked('${meme.memeId}')">
             <img src="${meme.memeSnapShot}"><button class="btn-remove" onclick="onRemoveMeme(event,'${meme.memeId}')">X</button>
             </section>`)
+        document.querySelector('.saved-memes-container').innerHTML = strHTML.join('')
 
-    document.querySelector('.saved-memes-container').innerHTML = strHTML.join('')
+    }
+
+
 }
 
 function onShowMemes() {
     hideElement('.memes-editor-container')
     hideElement('.gallery-container')
     showElement('.saved-memes-container')
-
+    toggleMenu()
     renderSavedMemes()
 }
 
@@ -330,7 +341,7 @@ function onDrawSticker(elSticker) {
 
 function onRemoveMeme(ev, memeIdx) {
     ev.stopPropagation()
-
+    flashMsg('Meme deleted')
     removeMeme(memeIdx)
     renderSavedMemes()
 }

@@ -70,21 +70,29 @@
                 <input class="text-editor" type="text" id="text-editor" name="text-editor" data-trans="addText"
                     placeholder="Add text" oninput="onSetLineTxt(this.value)">
                 <section class="btn-font-container">
-                    <div class="btn-font-control fa-solid fa-color">
+                    <div title="colors" class="btn-font-control fa-solid fa-color">
                         <input class="color-picker" type="color" id="color-picker" name="color-picker"
                             oninput="onColorPick(this.value)">
                     </div>
-                    <div class="btn btn-font-control fa-solid fa-plus" onclick="onAddLine()"></div>
-                    <div class="btn btn-font-control fa-solid fa-align-left" onclick="onAlignLeft()"></div>
-                    <div class="btn btn-font-control fa-solid fa-align-center" onclick="onAlignCenter()"></div>
-                    <div class="btn btn-font-control fa-solid fa-align-right" onclick="onAlignRight()"></div>
+                    <div title="add line" class="btn btn-font-control fa-solid fa-plus" onclick="onAddLine()"></div>
+                    <div title="align-left" class="btn btn-font-control fa-solid fa-align-left" onclick="onAlignLeft()">
+                    </div>
+                    <div title="align-center" class="btn btn-font-control fa-solid fa-align-center"
+                        onclick="onAlignCenter()"></div>
+                    <div title="align-right" class="btn btn-font-control fa-solid fa-align-right"
+                        onclick="onAlignRight()"></div>
                 </section>
                 <section class="btn btn-font-container-second flex">
-                    <div title="Scale" class="btn btn-font-control fa-solid fa-scale-up" onclick="onScaleTxt(+5)"></div>
-                    <div class="btn btn-font-control fa-solid fa-scale-down" onclick="onScaleTxt(-5)"></div>
-                    <div class="btn btn-font-control fa-solid fa-arrow-up" onclick="onMoveLine(+1)"></div>
-                    <div class="btn btn-font-control fa-solid fa-arrow-down" onclick="onMoveLine(-1)"></div>
-                    <div class="btn btn-font-control fa-solid fa-arrows-switch" onclick="onSwitchLine()"></div>
+                    <div title="scale-up" class="btn btn-font-control fa-solid fa-scale-up" onclick="onScaleTxt(+5)">
+                    </div>
+                    <div title="scale-down" class="btn btn-font-control fa-solid fa-scale-down"
+                        onclick="onScaleTxt(-5)"></div>
+                    <div title="move-up" class="btn btn-font-control fa-solid fa-arrow-up" onclick="onMoveLine(+1)">
+                    </div>
+                    <div title="move-down" class="btn btn-font-control fa-solid fa-arrow-down" onclick="onMoveLine(-1)">
+                    </div>
+                    <div title="switch lines" class="btn btn-font-control fa-solid fa-arrows-switch"
+                        onclick="onSwitchLine()"></div>
                     <!-- <div title="Rotate" class="btn btn-font-control fa-solid fa-rotate" onclick="onRotateLine()"></div> -->
 
                 </section>
@@ -124,9 +132,10 @@
                 </section>
                 <section class="btn-font-container-second flex">
 
-                    <div class="btn btn-font-control fa-solid fa-trash" onclick="onRemoveLine()"></div>
-                    <div class="btn btn-font-control fa-solid fa-save" onclick="onSaveMeme()"></div>
-                    <a class="btn btn-font-control fa-solid fa-download" href=" #" download="Canvas"
+                    <div title="delete line" class="btn btn-font-control fa-solid fa-trash" onclick="onRemoveLine()">
+                    </div>
+                    <div title="save meme" class="btn btn-font-control fa-solid fa-save" onclick="onSaveMeme()"></div>
+                    <a title="download" class="btn btn-font-control fa-solid fa-download" href=" #" download="Canvas"
                         onclick="onDownloadCanvas(this)"></a>
                     <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
                         <input name="img" id="imgData" type="hidden" />
@@ -136,6 +145,9 @@
                 <div class="share-container"></div>
             </div>
     </main>
+
+    <div class="user-msg"></div>
+
     <datalist id="galleryList">
         <option value="funny"></option>
         <option value="politics"></option>

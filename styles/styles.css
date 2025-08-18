@@ -18,6 +18,7 @@
 @import url('./components/memes-editor.css');
 @import url('./components/stickers.css');
 @import url('./components/saved-memes.css');
+@import url('./components/user-msg.css');
 
 
 @import url('./setup/mq.css');
