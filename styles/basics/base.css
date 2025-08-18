@@ -36,3 +36,10 @@ a {
 input {
     font: inherit;
 }
+
+img,
+canvas,
+button,
+a {
+    touch-action: manipulation;
+}

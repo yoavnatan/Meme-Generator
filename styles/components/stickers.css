@@ -30,3 +30,9 @@
 .stickers li:has(+li:hover) {
     scale: 1.15;
 }
+
+@media (max-width: 550px) {
+    .stickers {
+        max-width: 250px;
+    }
+}

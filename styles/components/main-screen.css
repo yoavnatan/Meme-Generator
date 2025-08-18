@@ -6,7 +6,7 @@
     pointer-events: none;
 
     transition: opacity .6s;
-
+    /* width: 100%; */
     opacity: 0;
 }
 

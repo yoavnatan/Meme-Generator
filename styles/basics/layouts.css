@@ -3,6 +3,7 @@
 .main-layout {
     display: grid;
     grid-template-columns: minmax(16px, 1fr) minmax(auto, 600px) minmax(16px, 1fr);
+    /* width: 100vw; */
 }
 
 .main-layout>*:not(full) {

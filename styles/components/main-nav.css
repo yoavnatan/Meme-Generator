@@ -54,7 +54,7 @@ body.menu-open .main-nav {
     .main-nav-list li {
         border-block-end: 1px solid whitesmoke;
         /* margin-block-start: 2em; */
-        /* margin-inline-start: 10px; */
+        margin-inline-start: 10px;
         margin-block: 15px;
     }
 
