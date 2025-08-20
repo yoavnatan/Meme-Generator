@@ -10,12 +10,13 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d')
     resizeCanvas()
     onShowGallery()
+    addEventListener('resize', resizeCanvas)
 }
 
 function renderMeme() {
     document.querySelector('.share-container').innerHTML = ''
 
-    resizeCanvas()
+    // resizeCanvas()
     const { selectedImgId: imgId, selectedLineIdx: lineIdx, lines } = getMeme()
     let img = new Image
     img.src = gImgs[imgId].url
@@ -30,6 +31,7 @@ function renderMeme() {
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
     gElCanvas.width = elContainer.clientWidth - 20
+    renderMeme()
 }
 
 function onDown(ev) {
@@ -260,7 +262,7 @@ function onShowMemes() {
     hideElement('.memes-editor-container')
     hideElement('.gallery-container')
     showElement('.saved-memes-container')
-    toggleMenu()
+    closeMenu()
     renderSavedMemes()
 }
 

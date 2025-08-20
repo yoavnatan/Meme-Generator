@@ -29,6 +29,7 @@ function onImageSelect(imgIdx) {
     showElement('.memes-editor-container')
     setImg(imgIdx)
     document.querySelector('.text-editor').focus()
+    resizeCanvas()
     renderMeme()
 }
 
