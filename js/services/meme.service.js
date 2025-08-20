@@ -205,8 +205,8 @@ function setMemeData(memeId) {
     gMeme = memeData
 }
 
-function getMemeById(memeId) {
-    return gMemes.find(meme => meme.memeId === memeId)
+function getMemeById(memeIdx) {
+    return gMemes.find(meme => meme.memeId === memeIdx)
 }
 
 function _filterImgs(filterBy) {
