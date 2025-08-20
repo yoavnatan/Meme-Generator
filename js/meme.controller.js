@@ -270,6 +270,7 @@ function onMemeClicked(memeId) {
     setMemeData(memeId)
     hideElement('.saved-memes-container')
     showElement('.memes-editor-container')
+    resizeCanvas()
     renderMeme()
 }
 
